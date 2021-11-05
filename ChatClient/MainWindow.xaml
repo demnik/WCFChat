@@ -1,0 +1,21 @@
+﻿<Window x:Class="ChatClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChatClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="185*"/>
+            <ColumnDefinition Width="151*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Name="UserNameTextBox" HorizontalAlignment="Left" Height="45" Margin="165,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button Name="btnConnDis" Content="Подключиться" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="245" Height="45" Click="btnConnDis_Click" Grid.ColumnSpan="2"/>
+        <ListBox Name="lbChat" HorizontalAlignment="Left" Height="215" Margin="10,60,0,0" VerticalAlignment="Top" Width="772" Grid.ColumnSpan="3"/>
+        <TextBox Name="MessageTextBox" HorizontalAlignment="Left" Height="129" Margin="10,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="772" Grid.ColumnSpan="3" KeyDown="MessageTextBox_KeyDown"/>
+
+    </Grid>
+</Window>
