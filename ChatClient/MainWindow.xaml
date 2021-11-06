@@ -1,21 +1,36 @@
 ﻿<Window x:Class="ChatClient.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ChatClient"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" Closing="Window_Closing">
-    <Grid>
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:ChatClient"
+            mc:Ignorable="d"
+            Title="GroupChat" Height="402" Width="789" Loaded="Window_Loaded" Closing="Window_Closing">
+
+    <Grid Margin="0,0,0,4">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="60*"/>
-            <ColumnDefinition Width="185*"/>
-            <ColumnDefinition Width="151*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox Name="UserNameTextBox" HorizontalAlignment="Left" Height="45" Margin="165,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <Button Name="btnConnDis" Content="Подключиться" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="245" Height="45" Click="btnConnDis_Click" Grid.ColumnSpan="2"/>
-        <ListBox Name="lbChat" HorizontalAlignment="Left" Height="215" Margin="10,60,0,0" VerticalAlignment="Top" Width="772" Grid.ColumnSpan="3"/>
-        <TextBox Name="MessageTextBox" HorizontalAlignment="Left" Height="129" Margin="10,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="772" Grid.ColumnSpan="3" KeyDown="MessageTextBox_KeyDown"/>
+        <TextBox Name="UserNameTextBox" Height="20" Margin="280,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="215"/>
+        <Button Name="btnConnDis" Content="Подключиться" Margin="10,10,0,0" VerticalAlignment="Top" Height="45" Click="btnConnDis_Click" HorizontalAlignment="Left" Width="245"/>
+        <ListBox Name="lbChat" Margin="10,60,11,92">
+        </ListBox>
+        <TextBox Name="MessageTextBox" Margin="10,0,81,17" TextWrapping="Wrap" KeyDown="MessageTextBox_KeyDown" Height="65" VerticalAlignment="Bottom">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="35"></Setter>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Button HorizontalAlignment="Right" Margin="0,0,11,17" Width="65" RenderTransformOrigin="0.5,0.333" Height="65" VerticalAlignment="Bottom" Background="White">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="65"/>
+                </Style>
+            </Button.Resources>
+            <Image Source="Resources/send.png" Height="36" Width="45" RenderTransformOrigin="0.456,0.722"/>
+        </Button>
+        <Label Content="Никнейм:" HorizontalAlignment="Left" Margin="275,10,0,0" VerticalAlignment="Top" Height="25" Width="112"/>
 
     </Grid>
 </Window>
